@@ -1,4 +1,3 @@
-require 'spec_helper'
 
 feature "user creates account" do
   # As a prospective user
