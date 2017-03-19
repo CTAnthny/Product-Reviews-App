@@ -1,4 +1,3 @@
-require 'capybara/poltergeist'
 Capybara.javascript_driver = :poltergeist
 
 feature "user deletes account" do
@@ -24,7 +23,7 @@ feature "user deletes account" do
     expect(page).to_not have_content('Cancel my account')
   end
 
-  scenario "user deletes account and cannot re-sign in" do
+  scenario "user deletes account and cannot re-sign in", js: true do
     user = FactoryGirl.create(:user)
     visit root_path
     click_link 'Sign In'

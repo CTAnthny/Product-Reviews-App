@@ -56,6 +56,7 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 end
 require "capybara/rails"
+require "capybara/rspec"
 require "valid_attribute"
 
 RSpec.configure do |config|

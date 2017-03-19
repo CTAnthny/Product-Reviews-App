@@ -37,12 +37,12 @@ feature "user updates account" do
     expect(page).to have_content("can't be blank")
   end
 
-  scenario "an unauthenticated user cannot update information" do
+  scenario "an unauthenticated user cannot edit information" do
     click_link 'Sign Out'
     expect(page).to_not have_content('Edit Account')
   end
 
-  scenario "an unauthenticated user is redirected when visiting the update url" do
+  scenario "an unauthenticated user is redirected when visiting the edit url" do
     click_link 'Sign Out'
     visit edit_user_registration_path
     expect(page).to have_content('You need to sign in or sign up before continuing.')
