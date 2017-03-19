@@ -39,5 +39,13 @@ feature "user deletes account" do
 
     expect(alert_message).to have_content('Are you sure?')
     expect(page).to have_content('Your account has been successfully cancelled. We hope to see you again soon.')
+    expect(page).to_not have_content('Sign Out')
+
+    click_link 'Sign In'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Sign In'
+
+    expect(page).to have_content('Invalid Email or Password.')
   end
 end

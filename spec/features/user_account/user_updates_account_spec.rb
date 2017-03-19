@@ -31,6 +31,12 @@ feature "user updates account" do
     expect(page).to have_content('Sign Out')
   end
 
+  scenario "user's current password must be provided to authenticate changes" do
+    click_link 'Edit Account'
+    click_button 'Update'
+    expect(page).to have_content("can't be blank")
+  end
+
   scenario "an unauthenticated user cannot update information" do
     click_link 'Sign Out'
     expect(page).to_not have_content('Edit Account')
