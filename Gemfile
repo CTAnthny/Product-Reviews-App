@@ -18,7 +18,6 @@ end
 
 group :development, :test do
   gem 'capybara'
-  gem 'poltergeist'
   gem 'factory_girl_rails'
   gem 'launchy', require: false
   gem 'pry-rails'

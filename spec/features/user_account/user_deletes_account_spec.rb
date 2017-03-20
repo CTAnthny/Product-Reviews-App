@@ -1,4 +1,3 @@
-Capybara.javascript_driver = :poltergeist
 
 feature "user deletes account" do
 
@@ -23,20 +22,16 @@ feature "user deletes account" do
     expect(page).to_not have_content('Cancel my account')
   end
 
-  scenario "user deletes account and cannot re-sign in", js: true do
+  scenario "user deletes account and cannot re-sign in" do
     user = FactoryGirl.create(:user)
     visit root_path
     click_link 'Sign In'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     click_button 'Sign In'
-    click_link 'Edit Account'
+    click_link('Edit Account')
+    click_link('Cancel my account')
 
-    alert_message = accept_alert do
-      click_link 'Cancel my account'
-    end
-
-    expect(alert_message).to have_content('Are you sure?')
     expect(page).to have_content('Your account has been successfully cancelled. We hope to see you again soon.')
     expect(page).to_not have_content('Sign Out')
 

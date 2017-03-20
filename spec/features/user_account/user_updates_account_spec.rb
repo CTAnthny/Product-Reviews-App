@@ -1,11 +1,12 @@
 
 feature "user updates account" do
+  let(:user) { FactoryGirl.create(:user) }
+
   before :each do
-    @user = FactoryGirl.create(:user)
     visit root_path
     click_link 'Sign In'
-    fill_in 'Email', with: @user.email
-    fill_in 'Password', with: @user.password
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
     click_button 'Sign In'
   end
 
