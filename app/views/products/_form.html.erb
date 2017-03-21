@@ -1,0 +1,15 @@
+<%= form_for @product do |f| %>
+  <%= render 'shared/error_messages', object: @product %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <%= f.label :description %>
+  <%= f.text_area:description, class: 'form-control' %>
+
+  <%= f.label :website %>
+  <%= f.text_field :website, class: 'form-control' %>
+
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+
+<% end %>

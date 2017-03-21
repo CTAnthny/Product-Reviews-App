@@ -23,7 +23,7 @@ feature "user adds item" do
       fill_in 'Website', with: 'ebay.com'
       click_button 'Submit'
 
-      expect(page).to have_content('Your item has been successfully submitted!')
+      expect(page).to have_content('Your product has been successfully submitted!')
       expect(page).to have_content('you throw it')
     end
 
