@@ -14,30 +14,48 @@ feature "user adds item" do
   # * If an item with that name is already in the database, I receive an error
 
   context "user is authenticated" do
-    scenario "user properly fills out the form and submits an item" do
+    before(:each) do
       sign_in(user)
       visit root_path
       click_link('Add Item')
+    end
+
+    scenario "user properly fills out the form and submits an item" do
       fill_in 'Name', with: 'baseball'
       fill_in 'Description', with: 'you throw it'
       fill_in 'Website', with: 'ebay.com'
       click_button 'Submit'
-
       expect(page).to have_content('Your product has been successfully submitted!')
       expect(page).to have_content('you throw it')
     end
 
-    scenario "user does not provide item name and description"
+    scenario "user does not provide item name and description" do
+      click_button 'Submit'
+      expect(page).to have_content("Name can't be blank")
+      expect(page).to have_content("Description can't be blank")
+    end
 
-    scenario "if an item with that name already exists, user receives an error"
+    scenario "if an item with that name already exists, user receives an error" do
+      fill_in 'Name', with: 'baseball'
+      fill_in 'Description', with: 'you throw it'
+      fill_in 'Website', with: 'ebay.com'
+      click_button 'Submit'
+      expect(page).to have_content('Your product has been successfully submitted!')
+      expect(page).to have_content('you throw it')
+
+      click_link 'Add Item'
+      fill_in 'Name', with: 'baseball'
+      fill_in 'Description', with: 'you throw it'
+      fill_in 'Website', with: 'ebay.com'
+      click_button 'Submit'
+      expect(page).to have_content('Name has already been taken')
+    end
   end
 
   context "user is not authenticated" do
     scenario "user cannot add an item" do
-      # have the user try to visit the new item page
       visit root_path
       expect(page).to_not have_content('Add Item')
-      # expect them to saee a message saynig they're not allowed
     end
   end
 end

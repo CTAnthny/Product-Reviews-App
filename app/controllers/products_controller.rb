@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
 
     if @product.save
       flash[:success] = 'Your product has been successfully submitted!'
-      redirect_to product_path(@product)
+      redirect_to @product
     else
       render 'new'
     end
