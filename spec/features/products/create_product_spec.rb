@@ -57,5 +57,11 @@ feature "user adds item" do
       visit root_path
       expect(page).to_not have_content('Add Item')
     end
+
+    scenario "user cannot access new product url" do
+      visit new_product_path
+      expect(page).to_not have_content('Add Item')
+      expect(page).to have_content('You need to sign in or sign up before continuing.')
+    end
   end
 end
