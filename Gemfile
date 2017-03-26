@@ -8,6 +8,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'simple_form'
+gem 'foundation-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
