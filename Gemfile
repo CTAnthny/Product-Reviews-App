@@ -8,7 +8,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'simple_form'
-gem 'foundation-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'font-awesome-rails'
+gem 'bootstrap_form'
+gem 'autoprefixer-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
