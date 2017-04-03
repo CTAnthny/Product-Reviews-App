@@ -51,6 +51,7 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap_form (2.6.0)
     builder (3.2.3)
     capybara (2.13.0)
       addressable
@@ -87,6 +88,8 @@ GEM
     ffi (1.9.18-java)
     ffi (1.9.18-x64-mingw32)
     ffi (1.9.18-x86-mingw32)
+    font-awesome-rails (4.7.0.1)
+      railties (>= 3.2, < 5.1)
     formatador (0.2.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -283,10 +286,13 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
+  autoprefixer-rails
   bootstrap-sass (~> 3.3.6)
+  bootstrap_form
   capybara
   devise
   factory_girl_rails
+  font-awesome-rails
   guard-livereload (~> 2.5)
   jquery-rails
   launchy
