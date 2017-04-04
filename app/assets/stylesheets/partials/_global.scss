@@ -12,6 +12,154 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 /* Fonts */
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,500italic,700italic,900,900italic);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600,600italic,700,800,400italic);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,800,900,700,600,500,300,200,100);
+
+/* General */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    position: relative;
+    background: #fff;
+    color: #656565;
+}
+
+a {
+    color: #0098d7;
+}
+
+a:active {
+    color: #1abc9c;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    color: #1abc9c;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    letter-spacing: 0px;
+    font-weight: normal;
+    position: relative;
+    padding: 0 0 10px 0;
+    font-weight: normal;
+    font-family: 'Roboto', serif;
+    line-height: 140%;
+    color: #01090c;
+}
+h1 {
+    font-size: 22px;
+}
+h2 {
+    font-size: 20px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+
+.lead {
+    font-family: 'Open Sans', Arial,sans-serif;
+    font-size: 18px;
+    margin: 15px 0;
+    padding: 0;
+}
+
+.aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    clear: both;
+}
+
+.clear {
+    clear: both;
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    width: 100%;
+}
+
+/* Header */
+
+.navbar {
+    background: #fff;
+}
+
+.navbar .navbar-brand {
+    text-transform: uppercase;
+    color: #555252;
+}
+
+.navbar .navbar-brand strong {
+    color: #1abc9c;
+}
+
+.navbar-nav {
+
+}
+
+.navbar-form {
+
+}
+
+.navbar-default .navbar-collapse {
+    text-align: center;
+    padding: 0;
+}
+
+ul.navbar-nav {
+    background: transparent;
+    margin: 0 auto;
+    margin-bottom: -5px;
+    display: inline-block;
+    float: none;
+}
+
+ul.navbar-nav li a {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #656565;
+}
+
+ul.navbar-nav li.active a {
+    background: transparent !important;
+    color: #1abc9c !important;
+}
+
+.navbar-nav a:active {
+    background: transparent !important;
+    color: #1abc9c !important;
+}
+
+ul.navbar-nav li a:hover {
+    background: transparent !important;
+    color: #1abc9c !important;
+}
+
+.dropdown-toggle {
+    background: transparent !important;
+    text-align: center;
+}
+
+.dropdown-toggle a {
+    color: #656565 !important;
+}
+
+.dropdown-toggle a:active {
+    color: #1abc9c !important;
+}
