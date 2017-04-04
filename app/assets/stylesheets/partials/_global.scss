@@ -29,19 +29,10 @@ body {
 }
 
 a {
-    color: #0098d7;
-}
-
-a:active {
     color: #1abc9c;
 }
 
-a:hover, a:focus {
-    text-decoration: none;
-    color: #1abc9c;
-}
-
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0px;
     font-weight: normal;
     position: relative;
@@ -50,24 +41,24 @@ h1,h2,h3,h4,h5,h6 {
     font-family: 'Roboto', serif;
     line-height: 140%;
     color: #01090c;
-}
-h1 {
-    font-size: 22px;
-}
-h2 {
-    font-size: 20px;
-}
-h3 {
-    font-size: 18px;
-}
-h4 {
-    font-size: 16px;
-}
-h5 {
-    font-size: 14px;
-}
-h6 {
-    font-size: 13px;
+      h1 {
+          font-size: 22px;
+      }
+      h2 {
+          font-size: 20px;
+      }
+      h3 {
+          font-size: 18px;
+      }
+      h4 {
+          font-size: 16px;
+      }
+      h5 {
+          font-size: 14px;
+      }
+      h6 {
+          font-size: 13px;
+      }
 }
 
 .lead {
@@ -93,32 +84,43 @@ h6 {
     width: 100%;
 }
 
+/* Bootstrap Focus Glow Override */
+
+#bootstrap-overrides input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="url"]:focus, textarea:focus{
+  border-color: #1abc9c;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(26, 188, 156, 0.6);
+  outline: 0 none;
+}
+
 /* Header */
 
 .navbar {
     background: #fff;
-}
-
-.navbar .navbar-brand {
-    text-transform: uppercase;
-    color: #555252;
-}
-
-.navbar .navbar-brand strong {
-    color: #1abc9c;
-}
-
-.navbar-nav {
-
+    .navbar-brand {
+        text-transform: uppercase;
+        color: #555252;
+        strong {
+            color: #1abc9c;
+        }
+    }
 }
 
 .navbar-form {
 
 }
 
-.navbar-default .navbar-collapse {
-    text-align: center;
-    padding: 0;
+.navbar-default {
+    .navbar-collapse {
+        text-align: center;
+        padding: 0;
+    }
+    .navbar-nav {
+        .open a:focus {
+            color: #777;
+            text-decoration: none;
+            font-weight: 700;
+        }
+    }
 }
 
 ul.navbar-nav {
@@ -127,39 +129,20 @@ ul.navbar-nav {
     margin-bottom: -5px;
     display: inline-block;
     float: none;
-}
-
-ul.navbar-nav li a {
-    text-align: center;
-    font-size: 14px;
-    font-weight: 700;
-    color: #656565;
-}
-
-ul.navbar-nav li.active a {
-    background: transparent !important;
-    color: #1abc9c !important;
-}
-
-.navbar-nav a:active {
-    background: transparent !important;
-    color: #1abc9c !important;
-}
-
-ul.navbar-nav li a:hover {
-    background: transparent !important;
-    color: #1abc9c !important;
+    li a {
+        text-align: center;
+        font-size: 14px;
+        font-weight: 700;
+        color: #777;
+        &.active, &:hover {
+            background: transparent !important;
+            color: #1abc9c !important;
+        }
+    }
 }
 
 .dropdown-toggle {
     background: transparent !important;
     text-align: center;
-}
-
-.dropdown-toggle a {
-    color: #656565 !important;
-}
-
-.dropdown-toggle a:active {
-    color: #1abc9c !important;
+    color: #777;
 }
