@@ -11,13 +11,13 @@ License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-/* Fonts */
+/* FONTS */
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,500italic,700italic,900,900italic);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600,600italic,700,800,400italic);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,800,900,700,600,500,300,200,100);
 
-/* General */
+/* GENERAL */
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -26,6 +26,7 @@ body {
     position: relative;
     background: #fff;
     color: #656565;
+    padding-top: 60px;
 }
 
 a {
@@ -92,12 +93,13 @@ h1, h2, h3, h4, h5, h6 {
   outline: 0 none;
 }
 
-/* Header */
+/* HEADER */
 
 .navbar {
     background: #fff;
+    padding: 5px 0;
+    margin-bottom: 0px;
     .navbar-brand {
-        text-transform: uppercase;
         color: #555252;
         strong {
             color: #1abc9c;
@@ -105,8 +107,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.navbar-form {
-
+.navbar-form .form-control {
+    margin: 0px 5px 0px 0px;
 }
 
 .navbar-default {
@@ -145,4 +147,37 @@ ul.navbar-nav {
     background: transparent !important;
     text-align: center;
     color: #777;
+}
+
+/* FOOTER */
+
+.footer-section {
+    display: block;
+    height: 75px;
+    padding: 0px 20px;
+    background-color: #4d4d4d;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    ol {
+        float: left;
+        background: transparent;
+        padding: 26px;
+        margin: 0px;
+    }
+    ul {
+        float: right;
+        list-style-type: none;
+        li {
+            float: left;
+            padding: 26px 15px;
+        }
+        .fa {
+            font-size: 20px;
+        }
+    }
+    a.active, a:hover {
+        color: #fff;
+        text-decoration: none;
+    }
 }

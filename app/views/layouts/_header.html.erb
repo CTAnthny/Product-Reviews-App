@@ -26,13 +26,14 @@
                 <li><a href="#">Profile</a></li>
                 <li><%= link_to 'Edit Account', edit_user_registration_path %></li>
                 <li role="separator" class="divider"></li>
-                <li><%= link_to 'Sign Out', destroy_user_session_path, method: 'delete' %></li>
+                <li><%= link_to destroy_user_session_path, method: 'delete' do %>Sign Out <i class="fa fa-sign-out" aria-hidden="true"></i><% end %></li>
               </ul>
             </li>
+            <!-- Nav Links -->
             <li><%= link_to 'Add Item', new_product_path %></li>
           <% else %>
-            <li><%= link_to 'Sign In', new_user_session_path %></li>
-            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <li><%= link_to new_user_session_path do %><i class="fa fa-unlock-alt" aria-hidden="true"></i> Sign In<% end %></li>
+            <li><%= link_to new_user_registration_path do %>Sign Up <i class="fa fa-sign-in" aria-hidden="true"></i><% end %></li>
           <% end %>
           <li><a href="#">Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
           <li><a href="#">Checkout <i class="fa fa-check" aria-hidden="true"></i></a></li>

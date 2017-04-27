@@ -11,7 +11,6 @@ gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-rails'
 gem 'bootstrap_form'
-gem 'autoprefixer-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
