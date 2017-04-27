@@ -154,15 +154,20 @@ ul.navbar-nav {
 .footer-section {
     display: block;
     height: 75px;
-    padding: 0px 20px;
+    padding: 25px 10%;
     background-color: #4d4d4d;
     font-size: 14px;
     font-weight: 600;
     text-align: center;
+    .breadcrumb {
+        height: 40px;
+        padding: 0px;
+        margin: 0px;
+    }
     ol {
         float: left;
         background: transparent;
-        padding: 26px;
+        padding: 0px;
         margin: 0px;
     }
     ul {
@@ -170,14 +175,56 @@ ul.navbar-nav {
         list-style-type: none;
         li {
             float: left;
-            padding: 26px 15px;
+            padding: 0px 5px;
         }
         .fa {
-            font-size: 20px;
+            font-size: 21px;
+            padding-left: 10px;
+        }
+        .fa-facebook {
+            padding-left: 20px;
         }
     }
     a.active, a:hover {
         color: #fff;
         text-decoration: none;
+    }
+    .divider {
+        color: #fff;
+    }
+}
+
+/* RESPONSIVE STYLE */
+
+@media (max-width: 815px) {
+    .navbar-right {
+        padding-right: 35%;
+    }
+    body {
+        padding-top: 110px;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        border: 0;
+    }
+    .navbar-right {
+        overflow: hidden;
+        padding: 1.5% 5%;
+        margin: 0;
+    }
+    body {
+        overflow: hidden;
+        padding-top: 60px;
+    }
+    .footer-section {
+        height: 125px;
+    }
+}
+
+@media (max-width: 379px) {
+    .fa {
+        visibility: hidden;
     }
 }
