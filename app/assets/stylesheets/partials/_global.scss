@@ -30,7 +30,7 @@ body {
 }
 
 a {
-    color: #1abc9c;
+    color: $brand-primary;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -85,10 +85,10 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-/* Bootstrap Focus Glow Override */
+    /* Bootstrap Focus Glow Override */
 
 #bootstrap-overrides input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="url"]:focus, textarea:focus{
-  border-color: #1abc9c;
+  border-color: $brand-primary;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(26, 188, 156, 0.6);
   outline: 0 none;
 }
@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
     .navbar-brand {
         color: #555252;
         strong {
-            color: #1abc9c;
+            color: $brand-primary;
         }
     }
 }
@@ -138,7 +138,7 @@ ul.navbar-nav {
         color: #777;
         &.active, &:hover {
             background: transparent !important;
-            color: #1abc9c !important;
+            color: $brand-primary !important;
         }
     }
 }
