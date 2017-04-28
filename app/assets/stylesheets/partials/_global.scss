@@ -152,6 +152,9 @@ ul.navbar-nav {
 /* FOOTER */
 
 .footer-section {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     display: block;
     height: 75px;
     padding: 25px 10%;
