@@ -1,0 +1,15 @@
+  /* General */
+
+$brand-primary: #1abc9c; // light-green
+$link-color: $brand-primary;
+$link-hover-color: lighen($link-color, 7.5%);
+
+  /* Buttons */
+
+$btn-primary-color: #fff; // white
+$btn-primary-bg: $brand-primary;
+$btn-primary-border: darken($brand-primary, 1.5%);
+
+  /* Forms */
+
+$input-border-focus: $brand-primary;

@@ -3,24 +3,9 @@
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
- 
- // Custom Variables
 
- $brand-primary: #1abc9c; // light-green
- $link-color: $brand-primary;
- $link-hover-color: darken($link-color, 15%);
-
-     /* Buttons */
-
- $btn-primary-color: #fff; // white
- $btn-primary-bg: $brand-primary;
- $btn-primary-border: darken($brand-primary, 5%);
- $btn-primary-hover: lighten($brand-primary, 5%);
- $btn-primary-bg-hover: lighten($brand-primary, 5%);
-
-     /* Forms */
-
- $input-border-focus: $brand-primary;
+// Custom Variables
+@import "custom-variables";
 
 // Core variables and mixins
 @import "bootstrap/variables";
