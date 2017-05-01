@@ -1,7 +1,7 @@
 <h2>Resend unlock instructions</h2>
 
 <%= bootstrap_form_for(resource, as: resource_name, label_errors: true, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.full_error :unlock_token %>
+  <%= f.errors_on :unlock_token %>
 
   <div class="form-inputs">
     <%= f.email_field, label_class: "required" %>

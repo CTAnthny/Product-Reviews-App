@@ -20,6 +20,8 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 /* GENERAL */
 
 body {
+    position: relative;
+    display: block;
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
     line-height: 20px;
@@ -214,6 +216,13 @@ ul.navbar-nav {
     }
     body {
         padding-top: 110px;
+    }
+    .footer-section {
+        position: relative;
+        margin-top: 30px;
+        ul .fa-facebook {
+            margin-left: 5px;
+        }
     }
 }
 
