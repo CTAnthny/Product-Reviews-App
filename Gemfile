@@ -11,6 +11,7 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-rails'
 gem 'bootstrap_form'
+gem 'kaminari'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

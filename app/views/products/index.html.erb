@@ -1,1 +1,18 @@
 <%= provide(:title, 'Products Index') %>
+
+<% @products.each do |product| %>
+  <div class="product">
+    <div class="product_img"></div>
+    <h2><%= link_to product.name, product %></h2>
+    <div class="details">
+      <p><%= product.description %></p>
+      <span><%= product.website %></span>
+      <span>user postee</span>
+      <span><%= product.updated_at %></span>
+    </div>
+  </div>
+<% end %>
+
+<p><%= link_to "Add New Product", new_product_path %></p>
+
+<%= paginate @products %>

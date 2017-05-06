@@ -1,6 +1,11 @@
 
 feature "user views all items" do
+
+  subject { page }
+
   let(:user) { FactoryGirl.create(:user) }
+  before(:all) { 15.times { FactoryGirl.create(:user) } }
+  after(:all) { User.delete_all }
 
   # As an authenticated user
   # I want to view a list of items
@@ -20,27 +25,29 @@ feature "user views all items" do
     end
 
     scenario "user views items with details" do
-      expect(page).to have_content('item name')
-      expect(page).to have_content('description')
-      expect(page).to have_content('website')
-      expect(page).to have_content('create time')
-      expect(page).to have_content('Jane Doe')
+      it { should have_content('item name') }
+      it { should have_content('description') }
+      it { should have_content('website') }
+      it { should have_content('create time') }
+      it { should have_content('Jane Doe') }
 
-      expect(page).to have_content('another item name')
-      expect(page).to have_content('another website')
+      it { should have_content('another item name') }
+      it { should have_content('another website') }
     end
 
     scenario "user views item in correct order"
-    scenario "user is able to paginate items"
+    scenario "user is able to paginate items" do
+      
+    end
 
   end
 
   context "user is not authenticated" do
     scenario "user cannot view items" do
       visit products_path
-      expect(page).to have_content('You need to sign in or sign up before continuing.')
-      expect(page).to_not have_content('item name')
-      expect(page).to_not have_content('Jane Doe')
+      it { should have_content('You need to sign in or sign up before continuing.') }
+      it { should_not have_content('item name') }
+      it { should_not have_content('Jane Doe') }
     end
   end
 end
