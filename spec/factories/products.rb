@@ -1,6 +1,9 @@
 FactoryGirl.define do
   factory :product do
-    name "MyString"
+    sequence(:name) { |n| "MyString #{n}" }
     description "MyText"
+    website "sample_host.com"
+    user
+    sequence(:updated_at) { |n| Time.now + n }
   end
 end

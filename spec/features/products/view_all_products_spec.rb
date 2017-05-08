@@ -4,8 +4,8 @@ feature "user views all items" do
   subject { page }
 
   let(:user) { FactoryGirl.create(:user) }
-  before(:all) { 15.times { FactoryGirl.create(:user) } }
-  after(:all) { User.delete_all }
+  before(:all) { 15.times { FactoryGirl.create(:product) } }
+  after(:all) { Product.delete_all }
 
   # As an authenticated user
   # I want to view a list of items
@@ -25,29 +25,37 @@ feature "user views all items" do
     end
 
     scenario "user views items with details" do
-      it { should have_content('item name') }
-      it { should have_content('description') }
-      it { should have_content('website') }
-      it { should have_content('create time') }
-      it { should have_content('Jane Doe') }
+      save_and_open_page
+      expect(page).to have_content('MyString 1')
+      expect(page).to have_content('MyText')
+      expect(page).to have_content('sample_host.com')
+      expect(page).to have_content('John Smith')
 
-      it { should have_content('another item name') }
-      it { should have_content('another website') }
+      expect(page).to have_content('MyString 2')
     end
 
-    scenario "user views item in correct order"
+    scenario "user views item in correct order" do
+      content = first('div h2').text
+      expect(content).to eq('MyString 15')
+    end
+
     scenario "user is able to paginate items" do
-      
+      expect(page).to have_selector('ul.pagination')
+
+      Product.page(2).each do |product|
+        expect(page).to have_selector('div.product', text: product.name)
+      end
     end
 
   end
 
   context "user is not authenticated" do
     scenario "user cannot view items" do
+      sign_out(user)
       visit products_path
-      it { should have_content('You need to sign in or sign up before continuing.') }
-      it { should_not have_content('item name') }
-      it { should_not have_content('Jane Doe') }
+      expect(page).to have_content('You need to sign in or sign up before continuing.')
+      expect(page).to_not have_content('MyString 1')
+      expect(page).to_not have_content('John Smith')
     end
   end
 end

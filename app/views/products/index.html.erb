@@ -5,10 +5,10 @@
     <div class="product_img"></div>
     <h2><%= link_to product.name, product %></h2>
     <div class="details">
-      <p><%= product.description %></p>
-      <span><%= product.website %></span>
-      <span>user postee</span>
-      <span><%= product.updated_at %></span>
+      <p class="desc"><%= product.description %></p>
+      <span class="website"><%= product.website %></span>
+      <span class="postee"><%= show_postee(product.user_id) %></span>
+      <span class="upd_at"><%= product.updated_at %></span>
     </div>
   </div>
 <% end %>
