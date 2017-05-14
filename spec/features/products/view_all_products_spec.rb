@@ -1,11 +1,8 @@
 
 feature "user views all items" do
-
-  subject { page }
-
   let(:user) { FactoryGirl.create(:user) }
-  before(:all) { 15.times { FactoryGirl.create(:product) } }
-  after(:all) { Product.delete_all }
+  before(:all) { 25.times { FactoryGirl.create(:product) } }
+  after(:all) { Product.delete_all; User.delete_all }
 
   # As an authenticated user
   # I want to view a list of items
@@ -25,7 +22,6 @@ feature "user views all items" do
     end
 
     scenario "user views items with details" do
-      save_and_open_page
       expect(page).to have_content('MyString 1')
       expect(page).to have_content('MyText')
       expect(page).to have_content('sample_host.com')
@@ -36,7 +32,7 @@ feature "user views all items" do
 
     scenario "user views item in correct order" do
       content = first('div h2').text
-      expect(content).to eq('MyString 15')
+      expect(content).to eq('MyString 25')
     end
 
     scenario "user is able to paginate items" do
@@ -46,7 +42,6 @@ feature "user views all items" do
         expect(page).to have_selector('div.product', text: product.name)
       end
     end
-
   end
 
   context "user is not authenticated" do
