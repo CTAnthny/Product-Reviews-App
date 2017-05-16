@@ -14,7 +14,9 @@ class ProductsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @product = Product.new(product_params)
+    @product.user_id = @user.id
 
     if @product.save
       flash[:success] = 'Your product has been successfully submitted!'

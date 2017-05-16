@@ -1,6 +1,6 @@
 <% if @product.errors.any? %>
-  <div id="error_explanation">
-    <div class="alert alert-danger">
+  <div class="alert alert-danger" id="error_explanation">
+    <div>
       The form contains <%= pluralize(@product.errors.count, "error") %>.
     </div>
     <ul>

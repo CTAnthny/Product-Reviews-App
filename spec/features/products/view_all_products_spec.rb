@@ -16,7 +16,6 @@ feature "user views all items" do
 
   context "user is authenticated" do
     before(:each) do
-      visit root_path
       sign_in(user)
       visit products_path
     end

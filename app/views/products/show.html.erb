@@ -1,21 +1,24 @@
 <%= provide(:title, "Product #{@product.name}") %>
+<%= stylesheet_link_tag "application", media: "all" %>
+
 <div class="row">
-  <p>
-    Name:
-    <%= @product.name %>
-  </p>
+  <h2><%= @product.name %> </h2>
 </div>
 
 <div class="row">
-  <p>
-    Description:
-    <%= @product.description %>
-  </p>
+  <p>Description: <%= @product.description %> </p>
 </div>
 
 <div class="row">
-  <p>
-    Website:
-    <%= @product.website %>
-  </p>
+  <p>Website: <%= @product.website %> </p>
 </div>
+
+<div class="row">
+  <p>Postee: <%= show_postee(@product.user_id) %> </p>
+</div>
+
+<div class="row">
+  <p>Last Updated At: <%= @product.updated_at %> </p>
+</div>
+
+<%= link_to 'All Products', products_path %>
