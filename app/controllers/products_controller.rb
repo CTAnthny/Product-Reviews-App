@@ -26,6 +26,21 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+
+    if @product.update_attributes(product_params)
+      flash[:notice] = 'Your product has been successfully updated!'
+      redirect_to @product
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def product_params

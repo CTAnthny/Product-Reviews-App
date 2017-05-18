@@ -1,0 +1,10 @@
+<%= provide(:title, 'Edit Product') %>
+<%= stylesheet_link_tag "application", media: "all" %>
+
+<h2>Edit Product</h2>
+<div class="row">
+  <%= render 'form' %>
+</div>
+
+<span><%= link_to 'Back', @product %></span>
+<span><%= link_to 'All Products', @products %></span>

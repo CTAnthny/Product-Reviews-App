@@ -31,7 +31,7 @@ feature "user views all items" do
 
     scenario "user views item in correct order" do
       content = first('div h2').text
-      expect(content).to eq('MyString 25')
+      expect(content).to eq('MyString 30')
     end
 
     scenario "user is able to paginate items" do

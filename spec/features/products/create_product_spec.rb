@@ -1,7 +1,8 @@
 
 feature "user adds item" do
   let(:user) { FactoryGirl.create(:user) }
-
+  after(:all) { Product.delete_all; User.delete_all }
+  
   # As an authenticated user
   # I want to add an item
   # So that others can review it
