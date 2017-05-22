@@ -21,12 +21,10 @@ feature "user views all items" do
     end
 
     scenario "user views items with details" do
-      expect(page).to have_content('MyString 1')
-      expect(page).to have_content('MyText')
-      expect(page).to have_content('sample_host.com')
+      expect(page).to have_content("#{Product.last.name}")
+      expect(page).to have_content("#{Product.last.description}")
+      expect(page).to have_content("#{Product.last.website}")
       expect(page).to have_content('John Smith')
-
-      expect(page).to have_content('MyString 2')
     end
 
     scenario "user views item in correct order" do

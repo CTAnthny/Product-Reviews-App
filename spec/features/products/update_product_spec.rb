@@ -50,9 +50,9 @@ feature "user updates an item" do
   end
 
   context "user is not authenticated" do
-    scenario "user cannot view items" do
+    scenario "user cannot update items" do
       sign_out(user)
-      visit products_path
+      visit edit_product_path(product)
       expect(page).to have_content('You need to sign in or sign up before continuing.')
       expect(page).to_not have_content('MyString 1')
       expect(page).to_not have_content('John Smith')

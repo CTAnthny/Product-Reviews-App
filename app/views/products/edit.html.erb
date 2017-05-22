@@ -7,4 +7,5 @@
 </div>
 
 <span><%= link_to 'Back', @product %></span>
+<span><%= link_to 'Delete Item', @product, method: :delete, data: { confirm: 'Are you sure?' } %></span>
 <span><%= link_to 'All Products', @products %></span>
