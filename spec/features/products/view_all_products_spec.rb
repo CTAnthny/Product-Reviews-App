@@ -30,8 +30,9 @@ feature "user views all items" do
     end
 
     scenario "user views item in correct order" do
-      content = first('div h2').text
-      expect(content).to eq('MyString 30')
+      content = first('div.details span.upd_at').text
+      last_upd_product = Product.last
+      expect(content).to eq(last_upd_product.updated_at.to_s)
     end
 
     scenario "user is able to paginate items" do
