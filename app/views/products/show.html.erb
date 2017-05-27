@@ -2,7 +2,7 @@
 <%= stylesheet_link_tag "application", media: "all" %>
 
 <div class="row">
-  <h2><%= @product.name %> </h2>
+  <h1><%= @product.name %> </h1>
 </div>
 
 <div class="row">
@@ -19,6 +19,11 @@
 
 <div class="row">
   <p>Last Updated At: <%= @product.updated_at %> </p>
+</div>
+
+<div class="review">
+  <h2>Review This Item:</h2>
+  <%= render "reviews/form", product: @product, review: @review %>
 </div>
 
 <%= link_to 'Edit Item', edit_product_path(@product) %>

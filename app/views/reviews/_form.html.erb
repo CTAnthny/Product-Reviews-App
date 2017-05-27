@@ -1,0 +1,8 @@
+<%= bootstrap_nested_form_for @product, @review do |f| %>
+  <%= render 'shared/error_messages', object: @review %>
+
+  <%= f.text_area :description, class: 'form-control' %>
+
+  <%= f.primary "Review Item" %>
+
+<% end %>

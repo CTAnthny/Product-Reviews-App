@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-rails'
-gem 'bootstrap_form'
+gem 'simple_form'
 gem 'kaminari'
 
 group :development do

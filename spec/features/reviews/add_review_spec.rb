@@ -22,9 +22,8 @@ feature "user reviews item" do
     end
 
     scenario "user visits product detail page and successfully reviews item" do
-      click_link "Review Item"
       fill_in "Description", with: "#{comment.description}"
-      click_button "Submit"
+      click_button "Review Item"
 
       expect(page).to have_content("Your review was successfully posted!")
       expect(page).to have_current_path(product_path(product))
@@ -33,7 +32,7 @@ feature "user reviews item" do
 
     scenario "user submits invalid information" do
       fill_in "Description", with: ""
-      click_button "Submit"
+      click_button "Review Item"
       expect(page).to_not have_content("Your review was successfully posted!")
       expect(page).to have_content("Description can't be blank.")
     end
