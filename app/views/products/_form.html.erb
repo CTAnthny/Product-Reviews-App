@@ -1,12 +1,7 @@
-<%= bootstrap_form_for @product do |f| %>
+<%= simple_form_for @product do |f| %>
   <%= render 'shared/error_messages', object: @product %>
-
-  <%= f.text_field :name, class: 'form-control' %>
-
-  <%= f.text_area :description, class: 'form-control' %>
-
-  <%= f.text_field :website, class: 'form-control' %>
-
-  <%= f.primary "Submit" %>
-
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :website %>
+  <%= f.button :submit, "Submit" %>
 <% end %>
