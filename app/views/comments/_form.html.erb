@@ -1,0 +1,7 @@
+<%= render 'shared/error_messages', object: @product %>
+<%= render 'shared/error_messages', object: @comment %>
+
+<%= simple_form_for [@product, @comment] do |f| %>
+  <%= f.input :description %>
+  <%= f.button :submit, "Review Item" %>
+<% end %>

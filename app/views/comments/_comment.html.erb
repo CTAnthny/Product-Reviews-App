@@ -1,0 +1,13 @@
+<% unless comment.nil? %>
+  <div class="row">
+    <p><%= comment.description %></p>
+  </div>
+
+  <div class="row">
+    <p><%= show_postee(comment.user_id) %></p>
+  </div>
+
+  <div class="row">
+    <p><%= comment.created_at %></p>
+  </div>
+<% end %>

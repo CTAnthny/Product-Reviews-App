@@ -25,16 +25,17 @@ feature "user reviews item" do
       fill_in "Description", with: "#{comment.description}"
       click_button "Review Item"
 
-      expect(page).to have_content("Your review was successfully posted!")
       expect(page).to have_current_path(product_path(product))
+      expect(page).to have_content("Your review was successfully posted!")
       expect(page).to have_content("John Smith")
+      expect(page).to have_content("#{comment.description}")
     end
 
     scenario "user submits invalid information" do
       fill_in "Description", with: ""
       click_button "Review Item"
       expect(page).to_not have_content("Your review was successfully posted!")
-      expect(page).to have_content("Description can't be blank.")
+      expect(page).to have_content("Description can't be blank and Description is too short (minimum is 10 characters)")
     end
   end
 

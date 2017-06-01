@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @comment = Comment.new
+    @comments = @product.comments.order(created_at: :desc)
   end
 
   def new

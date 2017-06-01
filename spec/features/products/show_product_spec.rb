@@ -3,7 +3,7 @@ feature "user views the details of an item" do
   let(:user) { FactoryGirl.create(:user) }
   let!(:product) { FactoryGirl.create(:product) }
   after(:all) { Product.delete_all; User.delete_all }
-  
+
   # As an authenticated user
   # I want to view the details about an item
   # So that I can get more information about it
@@ -26,7 +26,7 @@ feature "user views the details of an item" do
       expect(page).to have_content("#{product.name}")
       expect(page).to have_content("Description: #{product.description}")
       expect(page).to have_content("Website: #{product.website}")
-      expect(page).to have_content("Postee: John Smith")
+      expect(page).to have_content("Posted By: John Smith")
       expect(page).to have_content("Last Updated At: #{product.updated_at}")
     end
 

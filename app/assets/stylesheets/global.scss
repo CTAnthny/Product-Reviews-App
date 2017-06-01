@@ -92,9 +92,10 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Forms */
 
-label.required:after {
-  content:" *";
-}
+// Disabled with simple_form
+// label.required:after {
+//   content:" *";
+// }
 
 /* FIXES */
 
@@ -221,6 +222,16 @@ ul.navbar-nav {
   .divider {
     color: #fff;
   }
+}
+
+/* MISCELLANEOUS */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing(border-box);
 }
 
 /* RESPONSIVE STYLE */

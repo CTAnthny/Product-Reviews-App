@@ -1,4 +1,5 @@
 module ProductsHelper
+  # Returns User full name from id
   def show_postee(user_id)
     if user_id
       user = User.find(user_id)
