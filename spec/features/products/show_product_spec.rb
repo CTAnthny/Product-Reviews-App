@@ -2,7 +2,6 @@
 feature "user views the details of an item" do
   let(:user) { FactoryGirl.create(:user) }
   let!(:product) { FactoryGirl.create(:product) }
-  after(:all) { Product.delete_all; User.delete_all }
 
   # As an authenticated user
   # I want to view the details about an item

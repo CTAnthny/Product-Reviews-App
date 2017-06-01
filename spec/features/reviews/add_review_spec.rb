@@ -2,7 +2,6 @@
 feature "user reviews item" do
   let(:user) { FactoryGirl.create(:user) }
   let!(:product) { FactoryGirl.create(:product) }
-  let!(:comment) { FactoryGirl.create(:comment) }
 
   # As an authenticated user
   # I want to add a review for an item
@@ -22,13 +21,14 @@ feature "user reviews item" do
     end
 
     scenario "user visits product detail page and successfully reviews item" do
-      fill_in "Description", with: "#{comment.description}"
+      description = "Lorem Ipsum is the industry's standard dummy text."
+      fill_in "Description", with: description
       click_button "Review Item"
 
       expect(page).to have_current_path(product_path(product))
       expect(page).to have_content("Your review was successfully posted!")
       expect(page).to have_content("John Smith")
-      expect(page).to have_content("#{comment.description}")
+      expect(page).to have_content(description)
     end
 
     scenario "user submits invalid information" do
