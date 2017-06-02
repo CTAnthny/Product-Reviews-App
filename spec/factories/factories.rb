@@ -18,6 +18,7 @@ FactoryGirl.define do
     user
     sequence(:updated_at) { |n| Time.now + n }
 
+    # Create a singular product with many comments using create_list (see FactoryGirl associations doc)
     factory :product_with_comments do
       transient do
         comments_count 3

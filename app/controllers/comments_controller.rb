@@ -14,6 +14,22 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    @product = @comment.product
+
+    if @comment.update_attributes(comment_params)
+      flash[:notice] = 'Your review has been updated!'
+      redirect_to @product
+    else
+      render 'edit'
+    end
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:description)

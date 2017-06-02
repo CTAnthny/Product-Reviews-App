@@ -7,4 +7,10 @@
     <span class="postee"><%= show_postee(comment.user_id) %></span>
     <span class="crtd_at"><%= comment.created_at %></span>
   </div>
+
+  <% if current_user.id == comment.user_id %>
+    <div class="row">
+      <%= link_to 'Edit Review', edit_comment_path(comment) %>
+    </div>
+  <% end %>
 <% end %>
