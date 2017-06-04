@@ -19,16 +19,26 @@ feature "user updates review" do
       sign_in(user)
       visit products_path
       click_link "#{product.name}"
+      click_link "Edit Review"
     end
 
     scenario "user can reach the edit page from details page" do
-      click_link "Edit Review"
       expect(page).to have_current_path(edit_comment_path(comment))
     end
 
-    scenario "user correctly edits review"
+    scenario "user correctly edits review" do
+      fill_in 'Description', with: "super awesome product!!"
+      click_button 'Review Item'
+      expect(page).to have_current_path(product_path(product))
+      expect(page).to have_content("Your review has been updated!")
+      expect(page).to have_content("super awesome product!!")
+    end
 
-    scenario "user incorrectly fills out edit form"
+    scenario "user incorrectly fills out edit form" do
+      fill_in 'Description', with: ""
+      click_button 'Review Item'
+      expect(page).to have_content("Description can't be blank and Description is too short (minimum is 10 characters)")
+    end
   end
 
   context "user is not authenticated" do

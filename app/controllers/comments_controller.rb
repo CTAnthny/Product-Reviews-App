@@ -16,6 +16,7 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
+    @product = @comment.product
   end
 
   def update

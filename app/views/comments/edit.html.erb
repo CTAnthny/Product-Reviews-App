@@ -1,0 +1,16 @@
+<%= provide(:title, 'Edit Review') %>
+<%= stylesheet_link_tag "application", media: "all" %>
+
+<h1>Edit Review</h1>
+<div class="row">
+  <%= render 'shared/error_messages', object: @comment %>
+
+  <%= simple_form_for @comment do |f| %>
+    <%= f.input :description %>
+    <%= f.button :submit, "Review Item" %>
+  <% end %>
+</div>
+
+<span><%= link_to 'Back', @product %></span>
+<span><%= link_to 'Delete', @comment, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+<span><%= link_to 'All Products', @products %></span>
