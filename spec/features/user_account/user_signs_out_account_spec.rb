@@ -16,16 +16,10 @@ feature "user signs out" do
 
   # Acceptance Criteria:
   # * When I click the sign-out link I am signed out and my session is cleared
-  # * Once a user is signed out they must re-sign in to regain access
-  # * Once I am signed out I cannot post items or reviews
 
   scenario "user clicks sign-out link and session is cleared" do
     click_link 'Sign Out'
     expect(page).to have_content('Signed out successfully.')
     expect(page).to have_content('Sign In')
   end
-
-  scenario "once signed out a user must re-sign in to regain access"
-
-  scenario "once signed out a user cannot post items or reviews"
 end

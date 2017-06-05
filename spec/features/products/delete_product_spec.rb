@@ -1,7 +1,9 @@
 
 feature "user deletes an item" do
-  let(:user) { FactoryGirl.create(:user) }
-  let!(:product) { FactoryGirl.create(:product) }
+  let!(:product) { FactoryGirl.create(:product_with_comments, comments_count: 1) }
+  let!(:comment) { product.comments.first }
+  # The :product_with_comments factory instantiates it's own User for an associated comment that must be referenced
+  let!(:user) { User.find(comment.user_id) }
 
   # As an authenticated user
   # I want to delete an item
@@ -42,16 +44,13 @@ feature "user deletes an item" do
       expect(page).to_not have_content("#{product.name}")
     end
 
-    scenario "all comments associated with the item are deleted"
+    scenario "all comments associated with the item are deleted" do
+      click_link "Delete Item"
+      expect(product.comments).to eq([])
+    end
   end
 
   context "user is not authenticated" do
-    scenario "user cannot delete items" do
-      sign_out(user)
-      visit edit_product_path(product)
-      expect(page).to have_content('You need to sign in or sign up before continuing.')
-      expect(page).to_not have_content('MyString 1')
-      expect(page).to_not have_content('John Smith')
-    end
+    scenario "user cannot delete items"
   end
 end

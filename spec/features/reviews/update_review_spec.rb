@@ -5,7 +5,7 @@ feature "user updates review" do
   # The :product_with_comments factory instantiates it's own User for an associated comment that must be referenced
   let!(:user) { User.find(comment.user_id) }
 
-  # As a user
+  # As an authenticated user
   # I want to edit a review
   # So that I can correct any mistakes or add updates
   #

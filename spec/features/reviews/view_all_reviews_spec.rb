@@ -5,7 +5,7 @@ feature "user views all reviews" do
   let(:first_comment) { product.comments.first }
   let(:last_comment) { product.comments.last }
 
-  # As a user
+  # As an authenticated user
   # I want to view the reviews for the product
   # So that I can learn more about the product
   #

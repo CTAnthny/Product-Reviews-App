@@ -11,6 +11,7 @@
   <% if current_user.id == comment.user_id %>
     <div class="row">
       <%= link_to 'Edit Review', edit_comment_path(comment) %>
+      <%= link_to 'Delete Review', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   <% end %>
 <% end %>

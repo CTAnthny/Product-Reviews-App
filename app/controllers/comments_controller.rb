@@ -31,6 +31,14 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @product = @comment.product
+    @comment.destroy
+    flash[:notice] = "Your review has been successfully deleted!"
+    redirect_to @product
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:description)
