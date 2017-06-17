@@ -99,6 +99,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* FIXES */
 
+// Remove abbr underscores
+abbr[title] {
+  border-bottom: none !important;
+  cursor: inherit !important;
+  text-decoration: none !important;
+}
+
   /* Bootstrap Focus Glow Override */
 
 #bootstrap-overrides input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="url"]:focus, textarea:focus{
